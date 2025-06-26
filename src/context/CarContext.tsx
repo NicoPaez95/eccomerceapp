@@ -1,4 +1,5 @@
-/*import { createContext, useContext, useState, ReactNode } from "react";
+// src/context/CarContext.ts
+import { createContext, useContext, useState, ReactNode } from "react";
 import { ProductResponse } from "../types/product";
 
 interface CartItem extends ProductResponse {
@@ -12,7 +13,7 @@ interface CarContextType {
   clearCart: () => void;
 }
 
-const CarContext = createContext<CarContextType | undefined>(undefined);
+export const CarContext = createContext<CarContextType | undefined>(undefined);
 
 export const CarProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -39,17 +40,12 @@ export const CarProvider = ({ children }: { children: ReactNode }) => {
     setCart([]);
   };
 
+
+
+
   return (
-    <CarContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
+    <CarContext.Provider value={{cart, addToCart,removeFromCart,clearCart }}>
       {children}
     </CarContext.Provider>
   );
 };
-
-export const useCart = (): CarContextType => {
-  const context = useContext(CarContext);
-  if (!context) throw new Error("useCart must be used within a CarProvider");
-  return context;
-};
-
-*/

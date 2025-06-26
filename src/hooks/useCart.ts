@@ -1,5 +1,5 @@
 // src/hooks/useCart.ts
-/*import { useContext } from "react";
+import { useContext } from "react";
 import { CarContext } from "../context/CarContext";
 
 export const useCart = () => {
@@ -10,4 +10,4 @@ export const useCart = () => {
   }
 
   return context;
-};*/
+};
