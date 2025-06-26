@@ -1,14 +1,10 @@
 import { Product } from "../entities/Product";
 import { IProductRepository } from "../repositories/IProducRepository";
 import { NotFoundError } from "../errors/NotFoundError";
+import { CreateProductDTO } from "../../types/product";
+
 import { randomUUID } from "crypto"; // para generar IDs únicos
 
-interface CreateProductDTO {
-  name: string;
-  description?: string;
-  price: number;
-  stock?: number;
-}
 
 export class ProductService {
   constructor(private readonly productRepository: IProductRepository) {}
