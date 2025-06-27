@@ -1,3 +1,4 @@
+"use client"; 
 // src/context/CarContext.ts
 import { createContext, useContext, useState, ReactNode } from "react";
 import { ProductResponse } from "../types/product";

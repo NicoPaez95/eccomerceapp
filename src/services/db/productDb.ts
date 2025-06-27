@@ -4,8 +4,16 @@ import { IProductRepository } from "../../core/repositories/IProducRepository";
 import { Product } from "../../core/entities/Product";
 import { NotFoundError } from "../../core/errors/NotFoundError";
 
+import { mockProducts } from "../../mocks/products";
+
 export class InMemoryProductRepository implements IProductRepository {
   private products: Map<string, Product> = new Map();
+
+  constructor() {
+    mockProducts.forEach((p) => {
+      this.products.set(p.id, new Product(p));
+    });
+  }
 
   async findById(id: string): Promise<Product | null> {
     return this.products.get(id) || null;
@@ -36,3 +44,17 @@ export class InMemoryProductRepository implements IProductRepository {
     this.products.delete(id);
   }
 }
+
+// Si todavía necesitás una función fuera de la clase:
+export const getAllProducts = () => {
+  return mockProducts;
+};
+
+// Instancia única reutilizable
+export const productRepository = new InMemoryProductRepository();
+
+// Acceso simple para mocks
+export const getProductById = async (id: string) => {
+  return await productRepository.findById(id);
+};
+

@@ -1,3 +1,4 @@
+//Product.ts
 export interface ProductProps {
   id: string;
   name: string;

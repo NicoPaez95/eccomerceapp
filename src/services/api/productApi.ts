@@ -1,4 +1,6 @@
 // src/services/api/productApi.ts
+// src/services/api/productApi.ts
+import { productRepository } from "../db/productDb";
 
 export interface ProductResponse {
   id: string;
@@ -17,8 +19,16 @@ export interface CreateProductRequest {
   stock?: number;
 }
 
-const API_BASE_URL = "http://localhost:3000/api/products"; // Modifica según tu backend
+// Solo para pruebas
+export const productApi = {
+  getById: (id: string) => productRepository.findById(id),
+  getAll: () => productRepository.findAll(),
+};
 
+
+//cuando tengas la base de datos//
+/*
+const API_BASE_URL = "http://localhost:3000/api/products"; // Modifica según tu backend
 export const productApi = {
   async getAll(): Promise<ProductResponse[]> {
     const res = await fetch(API_BASE_URL);
@@ -65,4 +75,4 @@ export const productApi = {
 
     if (!res.ok) throw new Error("Failed to delete product");
   },
-};
+};*/
