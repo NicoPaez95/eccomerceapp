@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-     
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -20,9 +19,22 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/remeras/*": ["./public/productos/img/remeras/*"],
+      "@/pantalones/*": ["./public/productos/img/pantalones/*"],
+      "@/zapatillas/*": ["./public/productos/img/zapatillas/*"],
+      "@/chombas/*": ["./public/productos/img/remeras/chombas/*"],
+      "@/oversize/*": ["./public/productos/img/remeras/oversize/*"],
+      "@/slim/*": ["./public/productos/img/remeras/slimfit/*"],
+
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/carriro"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/carriro"
+  ],
   "exclude": ["node_modules"]
 }

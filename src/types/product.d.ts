@@ -9,6 +9,7 @@ export interface CreateProductDTO {
   description?: string;
   price: number;
   stock?: number;
+  subcategory: string; // ID de la subcategoría
 }
 
 /**

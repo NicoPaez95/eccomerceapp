@@ -1,56 +1,23 @@
 'use client';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { productApi } from '../../services/api/productApi';
-import { ProductResponse } from '../../types/product';
+// src/app/productos/page.tsx
+import ParticlesBackground from "../../components/ParticlesBackground";
+import CategoryItems from "../../components/CategoryItems";
 
-// Función para convertir Product a ProductResponse
-function mapProductToResponse(product: any): ProductResponse {
-  return {
-    id: product.id,
-    name: product.name,
-    description: product.description,
-    price: product.price,
-    stock: product.stock,
-    createdAt:
-      product.createdAt instanceof Date
-        ? product.createdAt.toISOString()
-        : product.createdAt,
-    updatedAt:
-      product.updatedAt instanceof Date
-        ? product.updatedAt.toISOString()
-        : product.updatedAt,
-  };
-}
-
-export default function ProductsListPage() {
-  const [products, setProducts] = useState<ProductResponse[]>([]);
-
-  useEffect(() => {
-    productApi.getAll().then((data) => {
-      const mappedProducts = data.map(mapProductToResponse);
-      setProducts(mappedProducts);
-    });
-  }, []);
-
+export default function HomePage() {
   return (
-    <main className="p-8">
-      <h1 className="text-3xl font-bold mb-6">Nuestros Productos</h1>
-      <ul className="space-y-4">
-        {products.map((product) => (
-          <li key={product.id} className="border p-4 rounded shadow">
-            <h2 className="text-xl font-semibold">{product.name}</h2>
-            <p>{product.description}</p>
-            <p className="font-bold mt-2">${product.price}</p>
-            <Link
-              href={`/productos/${product.id}`}
-              className="text-blue-600 hover:underline mt-2 inline-block"
-            >
-              Ver detalles
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <main className="relative h-screen overflow-hidden text-white">
+      <ParticlesBackground />
+      <div className="absolute inset-0 z-10 overflow-auto">
+        <div className="p-8 text-center">
+          <h1 className="text-4xl font-bold mb-4 animate-fadeIn">
+            Bienvenido a Nuestra Tienda
+          </h1>
+          <p className="mb-6 text-lg animate-fadeIn delay-200">
+            ¿Qué estás buscando?
+          </p>
+          <CategoryItems />
+        </div>
+      </div>
     </main>
   );
 }

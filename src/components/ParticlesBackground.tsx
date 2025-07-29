@@ -1,15 +1,17 @@
 'use client';
+// src/components/ParticlesBackground.tsx
+
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { type Container, type ISourceOptions, MoveDirection, OutMode } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim"; // Usamos loadSlim para reducir el tamaño del bundle (similar al particles.min.js original)
+import { loadSlim } from "@tsparticles/slim";
 
 const ParticleBackground = () => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine); // Equivalente a cargar particles.min.js
+      await loadSlim(engine);
     }).then(() => {
       setInit(true);
     });
@@ -19,7 +21,6 @@ const ParticleBackground = () => {
     console.log(container);
   };
 
-  // Configuración idéntica al comportamiento del código original
   const options: ISourceOptions = useMemo(() => ({
     particles: {
       number: {
@@ -30,28 +31,28 @@ const ParticleBackground = () => {
         },
       },
       color: {
-        value:  ["#546e7a", "#f5f5f5", "#eeeeee"], // Partículas blancas
+        value: ["#FFD700", "#B8860B", "#000000"], // Dorado clásico, oro oscuro y negro
       },
       shape: {
-        type: "circle", // Forma circular
+        type: "circle",
         stroke: {
           width: 0,
           color: "#000000",
         },
       },
       opacity: {
-        value: 0.56,
-        random: true, // Opacidad aleatoria
+        value: 0.8,
+        random: true,
         animation: {
           enable: true,
-          speed: 1,
-          opacity_min: 0,
+          speed: 1.2,
+          opacity_min: 0.3,
           sync: false,
         },
       },
       size: {
         value: 100,
-        random: true, // Tamaño aleatorio
+        random: true,
         animation: {
           enable: false,
           speed: 12,
@@ -60,15 +61,15 @@ const ParticleBackground = () => {
         },
       },
       links: {
-        enable: false, // Desactiva las líneas entre partículas (equivalente a line_linked: false)
+        enable: false,
       },
       move: {
         enable: true,
         speed: 4,
-        direction: MoveDirection.none, // Movimiento aleatorio
+        direction: MoveDirection.none,
         random: true,
         straight: false,
-        outMode: OutMode.out, // Partículas desaparecen al salir del canvas
+        outMode: OutMode.out,
         bounce: false,
       },
     },
@@ -76,17 +77,17 @@ const ParticleBackground = () => {
       events: {
         onHover: {
           enable: false,
-          mode: "bubble", // Modo "burbuja" al pasar el mouse
+          mode: "bubble",
         },
         onClick: {
           enable: false,
-          mode: "repulse", // Repulsión al hacer clic
+          mode: "repulse",
         },
       },
       modes: {
         bubble: {
           distance: 200,
-          size: 0, // Tamaño 0 para simular el efecto original
+          size: 0,
           duration: 2,
           opacity: 0,
           speed: 3,
@@ -100,25 +101,27 @@ const ParticleBackground = () => {
     retina_detect: true,
   }), []);
 
-if (init) {
-  return (
-    <div style={{ 
-      position: "fixed", // Cambiado de 'relative' a 'fixed'
-      top: 0,
-      left: 0,
-      width: "100vw", // Usar vw en lugar de %
-      height: "100vh", 
-      background: "#0d47a1",
-      zIndex: -1 // Asegurar z-index negativo
-    }}>
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />
-    </div>
-  );
-}
-}
+  if (init) {
+    return (
+      <div style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        background: "linear-gradient(135deg, #0f0f0f, #1a1a1a)", // Fondo oscuro premium
+        zIndex: -1
+      }}>
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={options}
+        />
+      </div>
+    );
+  }
+
+  return null;
+};
 
 export default ParticleBackground;

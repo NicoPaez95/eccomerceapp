@@ -1,15 +1,17 @@
-"use client"; 
+'use client';
 // src/context/CarContext.ts
 import { createContext, useContext, useState, ReactNode } from "react";
 import { ProductResponse } from "../types/product";
+import { VisualProduct } from "../types/VisualProduct";
 
-interface CartItem extends ProductResponse {
-  quantity: number;
-}
+type CartProduct = (ProductResponse | VisualProduct) & { image: string }& { quantity: number };
+
+type CartItem = CartProduct & { quantity: number };
+
 
 interface CarContextType {
   cart: CartItem[];
-  addToCart: (product: ProductResponse, quantity?: number) => void;
+  addToCart: (product: CartProduct, quantity?: number) => void;
   removeFromCart: (productId: string) => void;
   clearCart: () => void;
 }
@@ -19,7 +21,7 @@ export const CarContext = createContext<CarContextType | undefined>(undefined);
 export const CarProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  const addToCart = (product: ProductResponse, quantity: number = 1) => {
+  const addToCart = (product: CartProduct, quantity: number = 1) => {
     setCart((prev) => {
       const existing = prev.find((item) => item.id === product.id);
       if (existing) {
@@ -41,11 +43,8 @@ export const CarProvider = ({ children }: { children: ReactNode }) => {
     setCart([]);
   };
 
-
-
-
   return (
-    <CarContext.Provider value={{cart, addToCart,removeFromCart,clearCart }}>
+    <CarContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
       {children}
     </CarContext.Provider>
   );

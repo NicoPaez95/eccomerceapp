@@ -9,6 +9,8 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+
+
 }
 
 }
@@ -40,5 +42,54 @@ body {
 .animate-fadeIn {
   animation: fadeIn 1s ease-out forwards;
 }
+
+.bg-font-main{
+
+
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 600;    /* font-semibold */
+  text-transform: capitalize;
+  background: linear-gradient(to bottom right, #facc15, #fde047, #ca8a04); /* from-yellow-400 via-yellow-300 to-yellow-600 */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+
+}
+
+.button-primary {
+  background: linear-gradient(to right, #ca8a04, #eab308, #a16207); /* from-yellow-600 via-yellow-500 to-yellow-700 */
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+
+    background: linear-gradient(to right, #eab308, #fde047, #ca8a04); /* hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600 */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* hover:shadow-lg */
+  }
+}
+
+.button-secondary {
+
+  background-color: #1f2937; /* bg-gray-800 */
+  color: #f3f4f6;            /* text-gray-100 */
+  border: 1px solid #4b5563; /* border-gray-600 */
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+  
+  &:hover {
+  background-color: #374151; /* hover:bg-gray-700 */
+}
+
+}
+
+
 
 }

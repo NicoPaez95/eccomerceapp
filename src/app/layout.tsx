@@ -6,10 +6,14 @@ import { ReactNode } from "react";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es">
-      <body>
+    <html lang="es" className="h-full">
+      <body className="min-h-screen h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
         <UserProvider>
-          <CarProvider>{children}</CarProvider>
+          <CarProvider>
+            <div className="flex flex-col min-h-screen">
+              {children}
+            </div>
+          </CarProvider>
         </UserProvider>
       </body>
     </html>
