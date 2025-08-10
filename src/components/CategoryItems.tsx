@@ -2,7 +2,7 @@
 // src/components/CategoryItems.tsx
 import CategoryDropdown from './CategoryDropdown';
 import { categories } from './data/categoriesData';
-
+//this script is used to show the categories/este script se usa para mostrar las categorias
 export default function CategoryItems() {
   return (
     //buttons for categories

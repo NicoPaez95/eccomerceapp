@@ -1,17 +1,14 @@
 'use client';
 // src/app/carrito/page.tsx
-
+//this script is used to show the cart/este script se usa para mostrar el carrito
 import { useCart } from '../../hooks/useCart';
 import Link from 'next/link';
 import Image from 'next/image';
 import BackButton from '@/components/BackButton';
 
-
 export default function CarritoPage() {
   const { cart, removeFromCart, clearCart } = useCart();
-
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
   return (
     <div className="relative p-4 sm:p-6 max-w-3xl mx-auto">
       <BackButton fallbackUrl="/productos" />
@@ -56,7 +53,6 @@ export default function CarritoPage() {
             Total: ${total.toFixed(2)}
           </div>
 
-          {/* Botones alineados y consistentes */}
           <div className="flex flex-col sm:flex-row justify-end gap-4">
             <button
               onClick={clearCart}

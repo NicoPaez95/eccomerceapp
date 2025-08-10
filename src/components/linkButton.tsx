@@ -1,7 +1,7 @@
 'use client';
-
+// src/components/linkButton.tsx
 import Link from 'next/link';
-
+//this script is used to show the link button/este script se usa para mostrar el botón de enlace
 interface LinkButtonProps {
   href: string;
   label: string;

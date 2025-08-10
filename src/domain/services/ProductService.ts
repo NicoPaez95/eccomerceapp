@@ -1,17 +1,15 @@
+// src/domain/services/ProductService.ts
 import { Product } from "../entities/Product";
 import { IProductRepository } from "../repositories/IProducRepository";
 import { NotFoundError } from "../errors/NotFoundError";
 import { CreateProductDTO } from "../../types/product";
-
 import { randomUUID } from "crypto"; // para generar IDs únicos
-
 
 export class ProductService {
   constructor(private readonly productRepository: IProductRepository) {}
 
   async createProduct(data: CreateProductDTO): Promise<Product> {
     const now = new Date();
-
     const product = new Product({
       id: randomUUID(),
       name: data.name,

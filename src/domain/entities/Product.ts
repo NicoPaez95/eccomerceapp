@@ -2,17 +2,18 @@
 export interface ProductProps {
   id: string;
   name: string;
-  description: string;
+  description?: string;
   price: number;
   stock: number;
   createdAt: Date;
   updatedAt: Date;
-  category: string;
+  category?: string;
   subcategory: string; 
-  Firstimagen: string;
-  Secondimagen: string,
+  Firstimagen?: string;
+  Secondimagen?: string,
   Categoryimagen?: string,
-  colors: string[]
+  color?: string[]
+
 }
 
 export class Product {
@@ -23,7 +24,6 @@ export class Product {
       ...props,
       createdAt: props.createdAt || new Date(),
       updatedAt: props.updatedAt || new Date(),
-      
       
     };
 

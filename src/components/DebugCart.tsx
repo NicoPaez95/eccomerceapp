@@ -1,7 +1,7 @@
 'use client';
 // src/components/DebugCart.tsx
 import { useCart } from "@/hooks/useCart";
-
+//this script is used to show the cart/este script se usa para mostrar el carrito
 export default function DebugCart() {
   const { cart } = useCart();
 

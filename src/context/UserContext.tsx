@@ -1,7 +1,7 @@
 'use client';
 //src/context/UserContext.ts
+//this script is used to show the user context/este script se usa para mostrar el contexto del usuario
 import { createContext, useContext, useState, ReactNode } from "react";
-
 interface User {
   id: string;
   name: string;

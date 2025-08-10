@@ -1,9 +1,9 @@
-// app/layout.tsx
+// src/app/layout.tsx
 import "../styles/globals.css";
 import { CarProvider } from "../context/CarContext";
 import { UserProvider } from "../context/UserContext";
 import { ReactNode } from "react";
-
+//this is the root layout/este es el layout principal
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es" className="h-full">

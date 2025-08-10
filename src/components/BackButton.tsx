@@ -1,6 +1,6 @@
-// src/components/BackButton.tsx
 'use client';
-
+// src/components/BackButton.tsx
+//this script is used to show the back button/este script se usa para mostrar el botón de volver
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import Image from 'next/image';

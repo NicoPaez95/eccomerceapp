@@ -1,5 +1,6 @@
 'use client';
 // src/app/productos/[categoria]/[subcategoria]/[id]/page.tsx
+//this script is used to show the product detail page/este script se usa para mostrar la pagina de detalle del producto
 import { useCart } from '@/hooks/useCart';
 import { toast } from 'sonner';
 import { useRouter, useParams } from 'next/navigation';
@@ -63,10 +64,6 @@ export default function ProductDetailPage() {
             className="object-contain"
           />
         </div>
-
-
-
-
 
         <div className="text-white">
           <h1 className="text-3xl font-bold mb-2">{product.name}</h1>

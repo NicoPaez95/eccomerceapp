@@ -1,8 +1,6 @@
 //src/components/data/categoriesData.ts
-//aqui agrego las imagenes de las categorias en miniatura
 
-
-// src/components/data/categoriesData.ts
+//this is the data for the categories/datos de las categorías
 export const categories = [
   {
     label: 'remeras',

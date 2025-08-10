@@ -1,6 +1,6 @@
 'use client';
 // src/components/ParticlesBackground.tsx
-
+//this script is used to show the particle background/este script se usa para mostrar el fondo de particulas
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { type Container, type ISourceOptions, MoveDirection, OutMode } from "@tsparticles/engine";

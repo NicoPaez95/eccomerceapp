@@ -1,7 +1,6 @@
 'use client';
 // src/app/checkout/page.tsx
-
-
+//this script is used to show the checkout page/este script se usa para mostrar la pagina de checkout
 import { useCart } from '@/hooks/useCart';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';

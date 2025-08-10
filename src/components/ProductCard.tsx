@@ -1,7 +1,7 @@
 'use client';
 // src/components/ProductCard.tsx
+//this script is used to show the product card/este script se usa para mostrar la tarjeta de producto
 import Image from 'next/image';
-
 interface Props {
   id: string;
   name: string;
@@ -10,7 +10,6 @@ interface Props {
   colors: string[];
   onClick: () => void;
 }
-
 export default function ProductCard({ id, name, imageUrl, price, colors, onClick }: Props) {
   const colorMap: Record<string, string> = {
     blanco: "#ffffff",

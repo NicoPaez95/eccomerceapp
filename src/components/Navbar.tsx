@@ -1,7 +1,7 @@
 // src/components/NavBar.tsx
 import Link from "next/link";
 import { useCart } from "../hooks/useCart";
-
+//this script is used to show the navbar/este script se usa para mostrar la barra de navegación
 const NavBar = () => {
   const { cart } = useCart();
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);

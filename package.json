@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean-check": "node check-clean.js"
   },
   "dependencies": {
     "@tsparticles/all": "^3.8.1",
@@ -28,11 +29,17 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.29.0",
+    "chalk": "^4.1.2",
+    "depcheck": "^1.4.7",
+    "eslint": "^9.33.0",
     "eslint-config-next": "15.3.4",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "fs-extra": "^11.3.1",
+    "knip": "^5.62.0",
     "postcss": "^8.5.6",
     "prettier": "^3.5.3",
     "tailwindcss": "^4.1.10",
-    "typescript": "^5"
+    "typescript": "^5",
+    "unimported": "^1.31.0"
   }
 }

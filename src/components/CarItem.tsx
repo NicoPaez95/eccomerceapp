@@ -4,6 +4,8 @@ import { ProductResponse } from "../types/product";
 import { useCart } from "../hooks/useCart";
 import {formatPrice} from "../lib/formatPrice";
 
+//this script is used to show the cart item/este script se usa para mostrar el item del carrito
+
 interface CartItemProps {
   product: ProductResponse;
   quantity: number;

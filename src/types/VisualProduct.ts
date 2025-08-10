@@ -1,5 +1,5 @@
 // src/types/VisualProduct.ts
-
+//s This script defines the interface or signature of the visual information/este script define la interfaz o firma de la información visual
 export interface VisualProduct {
   id: string;
   name: string;

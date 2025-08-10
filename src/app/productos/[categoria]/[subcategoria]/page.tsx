@@ -1,5 +1,6 @@
 'use client';
 // src/app/productos/[categoria]/[subcategoria]/page.tsx
+//this script is used to show the subcategory page/este script se usa para mostrar la pagina de subcategoria
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { mockVisualProducts } from '@/adapters/mocks/mockVisualProducts';
@@ -12,9 +13,7 @@ export default function SubcategoryPage() {
   const params = useParams();
   const categoria = Array.isArray(params.categoria) ? params.categoria[0] : params.categoria;
   const subcategoria = Array.isArray(params.subcategoria) ? params.subcategoria[0] : params.subcategoria;
-
   const router = useRouter();
-
   const [products, setProducts] = useState<VisualProduct[]>([]);
   const [priceRange, setPriceRange] = useState({ min: '', max: '' });
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | ''>('');

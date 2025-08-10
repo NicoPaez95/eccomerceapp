@@ -1,24 +1,20 @@
 'use client';
 //src/components/categoryDropdown.tsx
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
+//this script is used to show the category dropdown/este script se usa para mostrar el dropdown de categorias
 interface Subcategory {
   name: string;
   href: string;
   imageSrc: string;
 }
-
 interface Props {
   label: string;
   subcategories: Subcategory[];
 }
-
 export default function CategoryDropdown({ label, subcategories }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
       <div className="relative h-15">
@@ -30,7 +26,7 @@ export default function CategoryDropdown({ label, subcategories }: Props) {
         {isOpen && (
           //products box container by category
           <div className=" border border-yellow-800 shadow-md shadow-yellow-700/50 absolute top-full left-0 bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#d4af37]/20 text-gray-100 p-6 rounded-lg z-50 flex flex-col gap-2 w-64 transition duration-300 backdrop-blur-sm">
-
+            
             {subcategories.map((subcategory, index) => (
               <Link
                 key={index}

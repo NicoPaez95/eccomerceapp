@@ -1,6 +1,6 @@
 // src/components/ui/Button.tsx
 import React from "react";
-
+//this script is used to show the button/este script se usa para mostrar el botón
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: "primary" | "secondary";

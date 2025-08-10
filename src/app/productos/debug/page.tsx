@@ -1,5 +1,6 @@
 'use client';
-
+// src/app/productos/debug/page.tsx
+//this script is used to show the debug page/este script se usa para mostrar la pagina de debug
 import { mockVisualProducts } from '@/adapters/mocks/mockVisualProducts';
 
 export default function DebugProducts() {

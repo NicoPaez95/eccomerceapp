@@ -1,0 +1,136 @@
+
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Reporte de Código Muerto</title>
+      <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1 { color: #2b6cb0; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 5px; overflow-x: auto; }
+      </style>
+    </head>
+    <body>
+      <h1>📊 Reporte de Código Muerto</h1>
+      <h2>Knip (exports y archivos no usados)</h2>
+      <pre>[93m[4mUnused files[24m[39m (16)
+src/components/Button.tsx                     
+src/components/CarItem.tsx                    
+src/components/DebugCart.tsx                  
+src/components/footer.tsx                     
+src/components/linkButton.tsx                 
+src/components/Navbar.tsx                     
+src/app/providers.tsx                         
+src/config/apiUrl.ts                          
+src/lib/fecther.ts                            
+src/lib/formatPrice.ts                        
+src/adapters/api/productApi.ts                
+src/adapters/db/productDb.ts                  
+src/adapters/payment/stripe.ts                
+src/domain/errors/NotFoundError.ts            
+src/domain/repositories/IProducRepository.ts  
+src/domain/services/ProductService.ts         
+[93m[4mUnused dependencies[24m[39m (4)
+@tsparticles/all  package.json:13:6
+aos               package.json:16:6
+axios             package.json:17:6
+clsx              package.json:18:6
+[93m[4mUnused devDependencies[24m[39m (9)
+@types/aos                    package.json:27:6
+autoprefixer                  package.json:31:6
+depcheck                      package.json:33:6
+eslint                        package.json:34:6
+eslint-config-next            package.json:35:6
+eslint-plugin-unused-imports  package.json:36:6
+prettier                      package.json:40:6
+tailwindcss                   package.json:41:6
+unimported                    package.json:43:6
+[93m[4mUnlisted dependencies[24m[39m (1)
+@tsparticles/slim  src/components/ParticlesBackground.tsx
+[93m[4mUnused exports[24m[39m (4)
+useUser                            src/context/UserContext.tsx:39:14             
+mockVisualCategories               src/adapters/mocks/mockVisualProducts.ts:21:14
+mapProductToVisualCategory         src/adapters/db/mappers/productMapper.ts:21:14
+Product                     class  src/domain/entities/Product.ts:18:14          
+</pre>
+      <h2>Unimported (archivos sin referencia)</h2>
+      <pre>
+       summary               unimported v1.31.0 (next)
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+       unresolved imports  : 0
+       unused dependencies : 6
+       unimported files    : 49
+
+
+─────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     │ 6 unused dependencies
+─────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 │ @tsparticles/all
+   2 │ @tsparticles/react
+   3 │ aos
+   4 │ axios
+   5 │ clsx
+   6 │ sonner
+─────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+─────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     │ 49 unimported files
+─────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\adapters\api\productApi.ts
+   2 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\adapters\db\mappers\productMapper.ts
+   3 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\adapters\db\productDb.ts
+   4 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\adapters\mocks\categoryImages.ts
+   5 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\adapters\mocks\mockVisualProducts.ts
+   6 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\adapters\mocks\products\pantalones.ts
+   7 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\adapters\mocks\products\products.ts
+   8 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\adapters\mocks\products\remeras.ts
+   9 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\adapters\mocks\products\zapatillas.ts
+  10 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\adapters\payment\stripe.ts
+  11 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\carrito\page.tsx
+  12 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\checkout\exito\page.tsx
+  13 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\checkout\page.tsx
+  14 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\error.tsx
+  15 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\layout.tsx
+  16 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\not-found.tsx
+  17 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\page.tsx
+  18 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\productos\[categoria]\[subcategoria]\[id]\page.tsx
+  19 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\productos\[categoria]\[subcategoria]\page.tsx
+  20 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\productos\debug\page.tsx
+  21 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\productos\page.tsx
+  22 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\providers.tsx
+  23 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\app\testboton\page.tsx
+  24 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\BackButton.tsx
+  25 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\Button.tsx
+  26 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\CarItem.tsx
+  27 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\CategoryDropdown.tsx
+  28 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\CategoryItems.tsx
+  29 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\data\categoriesData.ts
+  30 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\DebugCart.tsx
+  31 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\Filters.tsx
+  32 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\footer.tsx
+  33 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\linkButton.tsx
+  34 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\Navbar.tsx
+  35 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\ParticlesBackground.tsx
+  36 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\ProductCard.tsx
+  37 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\ProductGrid.tsx
+  38 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\components\TestBoton.tsx
+  39 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\config\apiUrl.ts
+  40 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\context\CarContext.tsx
+  41 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\context\UserContext.tsx
+  42 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\domain\entities\Product.ts
+  43 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\domain\errors\NotFoundError.ts
+  44 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\domain\repositories\IProducRepository.ts
+  45 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\domain\services\ProductService.ts
+  46 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\hooks\useCart.ts
+  47 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\lib\fecther.ts
+  48 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\lib\formatPrice.ts
+  49 │ C:\Users\Usuario\Desktop\NICO-PAEZ\MI-VIDA\LABORAL\PROYECTOS\PROYECTOS-REALES\PROYECTOS\my-ecommerce-app\my-ecommerce-app\src\types\VisualProduct.ts
+─────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+       Inspect the results and run npx unimported -u to update ignore lists
+</pre>
+    </body>
+    </html>
+  

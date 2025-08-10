@@ -1,23 +1,18 @@
 'use client';
 // src/context/CarContext.ts
+//this script is used to show the cart context/este script se usa para mostrar el contexto del carrito
 import { createContext, useContext, useState, ReactNode } from "react";
 import { ProductResponse } from "../types/product";
 import { VisualProduct } from "../types/VisualProduct";
-
 type CartProduct = (ProductResponse | VisualProduct) & { image: string }& { quantity: number };
-
 type CartItem = CartProduct & { quantity: number };
-
-
 interface CarContextType {
   cart: CartItem[];
   addToCart: (product: CartProduct, quantity?: number) => void;
   removeFromCart: (productId: string) => void;
   clearCart: () => void;
 }
-
 export const CarContext = createContext<CarContextType | undefined>(undefined);
-
 export const CarProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
 

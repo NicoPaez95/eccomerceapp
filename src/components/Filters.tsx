@@ -1,6 +1,6 @@
-// src/components/Filters.tsx
 'use client';
-
+// src/components/Filters.tsx
+//this script is used to show the filters/este script se usa para mostrar los filtros
 interface Props {
   priceRange: { min: string; max: string };
   setPriceRange: (range: { min: string; max: string }) => void;

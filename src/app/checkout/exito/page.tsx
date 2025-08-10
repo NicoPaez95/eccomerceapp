@@ -1,6 +1,6 @@
 'use client';
 // src/app/checkout/exito.tsx
-
+//this script is used to show the success page/este script se usa para mostrar la pagina de exito
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useCart } from '@/hooks/useCart'; // Asegúrate que esta ruta es correcta

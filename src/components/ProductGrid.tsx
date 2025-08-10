@@ -1,16 +1,13 @@
 // src/components/ProductGrid.tsx
+//this script is used to show the product grid/este script se usa para mostrar la grilla de productos
 import ProductCard from './ProductCard';
 import { VisualProduct } from '@/types/VisualProduct';
-
-
 interface Props {
   products: VisualProduct[]; // ✅ CORRECTO
   onProductClick: (id: string) => void;
 }
-
 export default function ProductGrid({ products, onProductClick }: Props) {
   return (
-
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 px-4 py-6">
       {products.map((product) => (
         <div
@@ -28,7 +25,5 @@ export default function ProductGrid({ products, onProductClick }: Props) {
         </div>
       ))}
     </div>
-
-
   );
 }
