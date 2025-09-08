@@ -1,4 +1,5 @@
 //src/domain/entities/Product.ts
+//this script defines the interface or signature of the product information/Este script define la interfaz o firma de la información del producto
 export interface ProductProps {
   id: string;
   name: string;

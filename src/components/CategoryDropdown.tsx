@@ -1,17 +1,9 @@
 'use client';
+// src/components/CategoryDropdown.tsx
+//this script is used to show the category dropdown/este script se usa para mostrar el dropdown de categorias
 import Image from 'next/image';
 import Link from 'next/link';
-import { SubCategory } from '@/domain/entities/SubCategory'; // ajustá la ruta si la tenés en otro lugar
-
-interface Props {
-  label: string;
-  subcategories: SubCategory[];
-  isOpen: boolean;
-  onOpen: () => void;
-  onClose: () => void;
-  onToggle: () => void;
-  isMobile: boolean;
-}
+import {CategoryDropdownProps} from '@/types/components';
 
 export default function CategoryDropdown({
   label,
@@ -21,7 +13,7 @@ export default function CategoryDropdown({
   onClose,
   onToggle,
   isMobile,
-}: Props) {
+}: CategoryDropdownProps) {
   return (
     <div
       className="relative inline-block "

@@ -1,4 +1,5 @@
 // src/domain/repositories/IProducRepository.ts
+//This script defines the  methods of the product repository/este script define los metodos del repositorio de productos
 import { Product } from "../entities/Product";
 
 export interface IProductRepository {

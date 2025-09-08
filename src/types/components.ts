@@ -1,3 +1,5 @@
+// src/types/components.ts
+//this script is used to show the types of components/este script se usa para mostrar los tipos de componentes
 import { SubCategory } from "@/domain/entities/SubCategory";
 import { VisualProduct } from '@/types/VisualProduct';  
 export interface Props {
@@ -13,11 +15,14 @@ export interface ProductProps {
   onClick: () => void;
 }
 export interface CategoryDropdownProps {
-  label: string;
+    label: string;
   subcategories: SubCategory[];
-  isOpen?: boolean;
-  onToggle?: () => void;
-  isMobile?: boolean;
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+  onToggle: () => void;
+  isMobile: boolean;
+
 }
 export interface FilterProps {
   priceRange: { min: string; max: string };

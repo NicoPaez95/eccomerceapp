@@ -1,4 +1,6 @@
 'use client';
+// src/components/CategoryItems.tsx
+//this script is used to show the category items/este script se usa para mostrar las categorias
 import CategoryDropdown from './CategoryDropdown';
 import { categories } from './data/categoriesData';
 import { useState, useEffect } from 'react';
@@ -7,7 +9,7 @@ export default function CategoryItems() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detectar si es mobile
+  //Detect if is mobile and /Detectar si es mobile
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -15,7 +17,7 @@ export default function CategoryItems() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // abrir (hover en desktop)
+  //open (hover in desktop) /abrir (hover en desktop)
   const openCategory = (index: number) => {
     setOpenIndex(index);
   };
