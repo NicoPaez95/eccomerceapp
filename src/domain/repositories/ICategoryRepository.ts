@@ -1,3 +1,4 @@
+// src/domain/repositories/IProducRepository.ts
 import { Product } from "../entities/Product";
 
 export interface IProductRepository {

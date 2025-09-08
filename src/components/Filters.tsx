@@ -1,13 +1,9 @@
 'use client';
 // src/components/Filters.tsx
 //this script is used to show the filters/este script se usa para mostrar los filtros
-interface Props {
-  priceRange: { min: string; max: string };
-  setPriceRange: (range: { min: string; max: string }) => void;
-  setSortOrder: (order: 'asc' | 'desc' | '') => void;
-}
+import { FilterProps } from '@/types/components';
 
-export default function Filters({ priceRange, setPriceRange, setSortOrder }: Props) {
+export default function Filters({ priceRange, setPriceRange, setSortOrder }: FilterProps) {
   return (
     <div className="mb-8 flex flex-col sm:flex-row gap-4 items-center justify-between bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] p-4 rounded-xl shadow-md shadow-yellow-900/20">
       <select

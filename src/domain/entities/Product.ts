@@ -24,6 +24,7 @@ export class Product {
       ...props,
       createdAt: props.createdAt || new Date(),
       updatedAt: props.updatedAt || new Date(),
+
       
     };
 

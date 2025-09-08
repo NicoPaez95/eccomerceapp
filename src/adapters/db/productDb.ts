@@ -1,4 +1,4 @@
-import { IProductRepository } from "../../domain/repositories/IProducRepository";
+import { IProductRepository } from "../../domain/repositories/IProductRepository";
 import { Product } from "../../domain/entities/Product";
 import { NotFoundError } from "../../domain/errors/NotFoundError";
 import { mockProducts } from "../../adapters/mocks/mockProductDb";

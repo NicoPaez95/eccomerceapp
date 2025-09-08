@@ -1,56 +1,77 @@
 'use client';
-//src/components/categoryDropdown.tsx
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-//this script is used to show the category dropdown/este script se usa para mostrar el dropdown de categorias
-interface Subcategory {
-  name: string;
-  href: string;
-  imageSrc: string;
-}
+import Image from 'next/image';
+import Link from 'next/link';
+import { SubCategory } from '@/domain/entities/SubCategory'; // ajustá la ruta si la tenés en otro lugar
+
 interface Props {
   label: string;
-  subcategories: Subcategory[];
+  subcategories: SubCategory[];
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+  onToggle: () => void;
+  isMobile: boolean;
 }
-export default function CategoryDropdown({ label, subcategories }: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+
+export default function CategoryDropdown({
+  label,
+  subcategories,
+  isOpen,
+  onOpen,
+  onClose,
+  onToggle,
+  isMobile,
+}: Props) {
   return (
-    <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
-      <div className="relative h-15">
-        <div className="inline-block">
-          <button className="px-4 py-2 button-primary transition duration-200">
-            {label}
-          </button>
+    <div
+      className="relative inline-block "
+      onMouseEnter={!isMobile ? onOpen : undefined}
+      onMouseLeave={!isMobile ? onClose : undefined}
+    >
+      <button
+        onClick={isMobile ? onToggle : undefined}
+        className="px-4 py-2 button-primary transition duration-200"
+      >
+        {label}
+      </button>
+{isOpen && (
+  <div
+    className={`
+      border border-yellow-800 shadow-md shadow-yellow-700/50 
+      absolute top-full mt-2 left-0
+      bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#d4af37]/20
+      text-gray-100 p-4 md:p-6 rounded-lg z-50
+      flex flex-col gap-2
+      w-[45vw] md:w-64
+      max-h-[70vh] md:max-h-none
+      overflow-y-auto md:overflow-visible
+      transition duration-300 backdrop-blur-sm
+      ${label === "zapatillas" ? "-translate-x-20" : ""}
+    `}
+  >
+    {subcategories.map((subcategory, index) => (
+      <Link
+        key={index}
+        href={subcategory.href}
+        className="flex items-center gap-3 hover:text-yellow-300 p-2 rounded transition "
+      >
+        <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
+          <Image
+            src={subcategory.imageSrc}
+            alt={subcategory.name}
+            fill
+            className="object-cover rounded border border-yellow-800/40 shadow-sm"
+          />
         </div>
-        {isOpen && (
-          //products box container by category
-          <div className=" border border-yellow-800 shadow-md shadow-yellow-700/50 absolute top-full left-0 bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#d4af37]/20 text-gray-100 p-6 rounded-lg z-50 flex flex-col gap-2 w-64 transition duration-300 backdrop-blur-sm">
-            
-            {subcategories.map((subcategory, index) => (
-              <Link
-                key={index}
-                href={subcategory.href}
-                className="flex items-center font-extrabold gap-3 hover:text-yellow-300 p-2 rounded transition"
-              >
-                {/* Imagen proporcional, más ancha, sin achicar el contenedor */}
-                <div className="relative w-20 h-20 ">
-                  <Image
-                    src={subcategory.imageSrc}
-                    alt={subcategory.name}
-                    fill
-                    className="object-cover rounded border border-yellow-800/40 shadow-sm"
-                  />
-                </div>
+        <span className="text-sm md:text-base font-medium">
+          {subcategory.name}
+        </span>
+      </Link>
+    ))}
+  </div>
+)}
 
-                <span className="text-sm font-medium">{subcategory.name}</span>
-              </Link>
 
-            ))}
-          </div>
-        )}
-
-      </div>
     </div>
   );
 }

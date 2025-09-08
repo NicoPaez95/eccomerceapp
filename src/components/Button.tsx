@@ -1,10 +1,8 @@
 // src/components/ui/Button.tsx
 import React from "react";
+import { ButtonProps } from "@/types/components";
 //this script is used to show the button/este script se usa para mostrar el botón
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  variant?: "primary" | "secondary";
-}
+
 
 const Button = ({ children, variant = "primary", ...props }: ButtonProps) => {
   const base = "px-4 py-2 rounded font-medium transition-colors duration-200";

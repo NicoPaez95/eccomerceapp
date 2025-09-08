@@ -2,6 +2,7 @@
 //Main page//Pagina principal
 import ParticlesBackground from "../components/ParticlesBackground";
 import CategoryItems from "../components/CategoryItems";
+
 export default function HomePage() {
   return (
     <main className="relative h-screen overflow-hidden text-white">
@@ -24,4 +25,3 @@ export default function HomePage() {
     </main>
   );
 }
-
