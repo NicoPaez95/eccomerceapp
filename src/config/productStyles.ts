@@ -1,4 +1,4 @@
-import { zapatillas } from "@/adapters/mocks/products/zapatillas";
+
 
 export const productImageStyles: Record<string, Record<string, string>> = {
   remeras: {

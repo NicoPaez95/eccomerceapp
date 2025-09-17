@@ -40,7 +40,7 @@ export default function SubcategoryPage() {
     setProducts(filtered);
   }, [subcategoria, priceRange, sortOrder]);
 
-  const handleProductClick = (id: number) => {
+  const handleProductClick = (id: string) => {
     router.push(`/productos/${categoria}/${subcategoria}/${id}`);
   };
 
