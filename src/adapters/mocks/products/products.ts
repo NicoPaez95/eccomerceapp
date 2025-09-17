@@ -1,4 +1,7 @@
 // src/adapters/mocks/products.ts
-export { remeras } from "@/adapters/mocks/products//remeras";
-export { pantalones } from "@/adapters/mocks/products/pantalones";
-export { zapatillas } from "@/adapters/mocks/products/zapatillas";
+import { remeras } from "@/adapters/mocks/products/remeras";
+import { pantalones } from "@/adapters/mocks/products/pantalones";
+import { zapatillas } from "@/adapters/mocks/products/zapatillas";
+
+// Unir todos los arrays en uno solo
+export const mockProducts = [...remeras, ...pantalones, ...zapatillas];

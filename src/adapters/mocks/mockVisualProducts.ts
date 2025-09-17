@@ -1,11 +1,11 @@
 // src/adapters/mocks/mockVisualProducts.ts
 
-import { remeras, pantalones, zapatillas } from "@/adapters/mocks/products/products";
+import { mockProducts} from "@/adapters/mocks/products/products";
 import { mapProductToVisual } from "@/adapters/db/mappers/productMapper";
 import { VisualProduct, VisualCategory } from "@/types/VisualProduct";
 import { categoryImages } from "./categoryImages";
 
-const allProducts = [...remeras, ...pantalones, ...zapatillas];
+const allProducts = mockProducts;
 
 // Mapeamos productos visuales y normalizamos las categorías
 export const mockVisualProducts: VisualProduct[] = allProducts.map((product) => {
@@ -18,11 +18,12 @@ export const mockVisualProducts: VisualProduct[] = allProducts.map((product) => 
 });
 
 // Mapeamos categorías visuales también en minúsculas
-export const mockVisualCategories: VisualCategory[] = Object.entries(categoryImages).flatMap(
+export const mockVisualcategory: VisualCategory[] = Object.entries(categoryImages).flatMap(
   ([category, subcategoryMap]) =>
     Object.entries(subcategoryMap).map(([subcategory, categoryImage]) => ({
       category: category.toLowerCase(),
       subcategory: subcategory.toLowerCase(),
-      categoryImage,
+      categoryImage: categoryImage,
+      isOpen: false,
     }))
 );

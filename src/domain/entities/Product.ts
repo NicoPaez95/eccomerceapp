@@ -13,7 +13,8 @@ export interface ProductProps {
   Firstimagen?: string;
   Secondimagen?: string,
   Categoryimagen?: string,
-  color?: string[]
+  colors?: string[],
+  isOpen?: boolean
 
 }
 

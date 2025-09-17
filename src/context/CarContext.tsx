@@ -1,7 +1,7 @@
 'use client';
 // src/context/CarContext.ts
 //this script is used to show the cart context/este script se usa para mostrar el contexto del carrito
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useState, ReactNode } from "react";
 import { ProductResponse } from "../types/product";
 import { VisualProduct } from "../types/VisualProduct";
 type CartProduct = (ProductResponse | VisualProduct) & { image: string }& { quantity: number };

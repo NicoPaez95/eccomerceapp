@@ -2,7 +2,7 @@
 // src/components/CategoryItems.tsx
 //this script is used to show the category items/este script se usa para mostrar las categorias
 import CategoryDropdown from './CategoryDropdown';
-import { categories } from './data/categoriesData';
+import { category } from './data/categoriesData';
 import { useState, useEffect } from 'react';
 
 export default function CategoryItems() {
@@ -32,11 +32,11 @@ export default function CategoryItems() {
 
   return (
     <div className="flex justify-center flex-wrap gap-4 mt-8">
-      {categories.map((category, index) => (
+      {category.map((category, index) => (
         <CategoryDropdown
           key={index}
           label={category.label}
-          subcategories={category.subcategories}
+          subcategory={category.subcategory}
           isOpen={openIndex === index}
           onOpen={() => openCategory(index)}
           onClose={() => closeCategory()}

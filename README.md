@@ -1,10 +1,10 @@
 ## 🧥 Men's Clothing E-commerce
 
-Welcome to my online store for men's fashion. This web application allows users to explore various product categories (pants, t-shirts, sneakers), apply filters, add items to the cart, and go through a full checkout process.
+Welcome to my online store for men's fashion. This web application allows users to explore various product category (pants, t-shirts, sneakers), apply filters, add items to the cart, and go through a full checkout process.
 
 ## ✨ Key Features
 
-- Navigation by categories and subcategories  
+- Navigation by category and subcategory  
 - Individual product detail view  
 - Functional shopping cart  
 - Checkout integrated with Stripe (mocked)  

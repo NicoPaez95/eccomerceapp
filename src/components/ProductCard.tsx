@@ -1,10 +1,17 @@
 'use client';
-// src/components/ProductCard.tsx
-//this script is used to show the product card/este script se usa para mostrar la tarjeta de producto
 import Image from 'next/image';
-import {ProductProps} from '@/types/components'
+import { ProductProps } from '@/types/components';
+import { productImageStyles } from '@/config/productStyles';
 
-export default function ProductCard({ id, name, imageUrl, price, colors, onClick }: ProductProps) {
+export default function ProductCard({
+  name,
+  imageUrl,
+  price,
+  colors,
+  onClick,
+  category,
+  subcategory
+}: ProductProps & { category: string; subcategory?: string }) {
   const colorMap: Record<string, string> = {
     blanco: "#ffffff",
     negro: "#000000",
@@ -31,17 +38,38 @@ export default function ProductCard({ id, name, imageUrl, price, colors, onClick
     grisperla: "#c0c0c0"
   };
 
+  // Validar y normalizar categoría y subcategoría
+  const normalizedCategory = category ? category.toLowerCase() : 'default';
+  
+  let normalizedSubcategory = 'default';
+  if (subcategory) {
+    // Convertir la primera letra a mayúscula y el resto a minúscula
+    normalizedSubcategory = subcategory.charAt(0).toUpperCase() + 
+                           subcategory.slice(1).toLowerCase();
+  }
+
+  // Obtener el estilo de imagen con validaciones
+  let imageClass = productImageStyles.default.default;
+  
+  if (productImageStyles[normalizedCategory]) {
+    if (productImageStyles[normalizedCategory][normalizedSubcategory]) {
+      imageClass = productImageStyles[normalizedCategory][normalizedSubcategory];
+    } else if (productImageStyles[normalizedCategory].default) {
+      imageClass = productImageStyles[normalizedCategory].default;
+    }
+  }
+
   return (
     <div
       onClick={onClick}
       className="cursor-pointer transform transition-transform hover:scale-[1.02] rounded-xl bg-gradient-to-br from-gray-900 via-gray-800 to-black p-2 shadow-md hover:shadow-yellow-500/20 border border-yellow-700/30"
     >
-      <div className="relative w-full h-48 bg-black rounded-lg overflow-hidden border border-yellow-600/20">
+      <div className="relative w-full h-48 rounded-lg overflow-hidden border border-yellow-600/20">
         <Image
           src={imageUrl}
           alt={name}
           fill
-          className="object-cover hover:opacity-85 transition-opacity duration-300"
+          className={`${imageClass}`}
         />
       </div>
 

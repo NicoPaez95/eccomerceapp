@@ -1,7 +1,8 @@
 // src/types/components.ts
 //this script is used to show the types of components/este script se usa para mostrar los tipos de componentes
 import { SubCategory } from "@/domain/entities/SubCategory";
-import { VisualProduct } from '@/types/VisualProduct';  
+import { Category } from "@/domain/entities/Category";
+import { VisualProduct } from '@/types/VisualProduct';
 export interface Props {
   products: VisualProduct[]; // ✅ CORRECTO
   onProductClick: (id: string) => void;
@@ -15,8 +16,9 @@ export interface ProductProps {
   onClick: () => void;
 }
 export interface CategoryDropdownProps {
-    label: string;
-  subcategories: SubCategory[];
+  label: string;
+  category?: Category[] ;
+  subcategory: SubCategory[];
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
@@ -41,5 +43,12 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export interface LinkButtonProps {
   href: string;
   label: string;
-    className?: string; // <- agregamos esta línea
+  className?: string; // <- agregamos esta línea
+}
+
+export interface ProductGridProps {
+  products: VisualProduct[];
+  onProductClick: (id: string) => void;
+  category: string;
+  subcategory: string;
 }

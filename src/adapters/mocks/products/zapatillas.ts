@@ -94,7 +94,7 @@ export const zapatillas: ProductProps[] = [
     description: "Inspiradas en el skate de los 90s, con suela vulcanizada y diseño de lona resistente.",
     Firstimagen: "/productos/img/zapatillas/urbana/skateretroazul.png",
     Secondimagen: "/productos/img/zapatillas/urbana/skateretromarron.png",
-    colors: ["azul", "marrón"],
+    colors: ["azul", "marron"],
     stock: 6,
     category: "zapatillas",
     subcategory: "urbana",

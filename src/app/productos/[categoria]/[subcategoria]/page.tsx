@@ -8,6 +8,7 @@ import Filters from '@/components/Filters';
 import ProductGrid from '@/components/ProductGrid';
 import { VisualProduct } from '@/types/VisualProduct';
 import BackButton from '@/components/BackButton';
+import Image from 'next/image';
 
 export default function SubcategoryPage() {
   const params = useParams();
@@ -17,6 +18,9 @@ export default function SubcategoryPage() {
   const [products, setProducts] = useState<VisualProduct[]>([]);
   const [priceRange, setPriceRange] = useState({ min: '', max: '' });
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | ''>('');
+
+  // Depuración: verificar los parámetros de la URL
+  console.log('Params from URL:', { categoria, subcategoria });
 
   useEffect(() => {
     let filtered = mockVisualProducts.filter((p) => p.subcategory === subcategoria);
@@ -36,13 +40,13 @@ export default function SubcategoryPage() {
     setProducts(filtered);
   }, [subcategoria, priceRange, sortOrder]);
 
-  const handleProductClick = (id: string) => {
+  const handleProductClick = (id: number) => {
     router.push(`/productos/${categoria}/${subcategoria}/${id}`);
   };
 
   return (
     <div className="p-6 max-w-6xl mx-auto">
-       {/* Botón volver: esquina superior izquierda */}
+      {/* Botón volver: esquina superior izquierda */}
       <div className="fixed top-4 right-4 z-50"></div>
       <div className="fixed top-4 left-4 z-50">
         <BackButton fallbackUrl={`/productos/${categoria}`} />
@@ -55,7 +59,13 @@ export default function SubcategoryPage() {
           className="p-2 bg-black bg-opacity-50 rounded-full hover:bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] transition-colors duration-200 shadow-md"
           aria-label="Ir al carrito"
         >
-          <img src="/resources/icons/cart.svg" alt="Carrito" className="w-12 h-12" />
+          <Image
+            src="/resources/icons/cart.svg"
+            alt="Carrito"
+            width={48}
+            height={48}
+            style={{ width: '48px', height: '48px' }}
+          />
         </button>
       </div>
 
@@ -73,10 +83,14 @@ export default function SubcategoryPage() {
           setSortOrder={setSortOrder}
         />
 
-        <ProductGrid products={products} onProductClick={handleProductClick} />
+        {/* Pasar category y subcategory al ProductGrid */}
+        <ProductGrid 
+          products={products} 
+          onProductClick={handleProductClick}
+          category={categoria ?? ''}  // ← Agregar esta prop
+          subcategory={subcategoria ?? ''}  // ← Agregar esta prop
+        />
       </div>
-
     </div>
-
   );
 }

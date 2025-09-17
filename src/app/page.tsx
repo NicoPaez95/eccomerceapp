@@ -18,7 +18,7 @@ export default function HomePage() {
           <p className="mb-6 text-lg animate-fadeIn delay-200">
             ¿Qué estás buscando?
           </p>
-          {/* dynamically rendered categories/Categorías renderizadas dinámicamente */}
+          {/* dynamically rendered category/Categorías renderizadas dinámicamente */}
           <CategoryItems />
         </div>
       </div>

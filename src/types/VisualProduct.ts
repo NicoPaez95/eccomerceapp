@@ -11,12 +11,12 @@ export interface VisualProduct {
   subcategory: string;
   description: string;
   stock: number;
-  isOpen: boolean;
+  isOpen?: boolean;
 }
 
 export interface VisualCategory {
   category: string;
   subcategory: string;
   categoryImage: string;
-  isOpen: boolean;
+  isOpen?: boolean;
 }
