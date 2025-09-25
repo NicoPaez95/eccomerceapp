@@ -1,16 +1,11 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone',
-    basePath: '/shop',
-    async rewrites() {
-        return [
-            {
-                source: '/:path*',
-                destination: '/:path*',
-            },
-        ]
-    }
+  output: 'standalone',
+  basePath: '/shop',
+  env: {
+    PORT: '4000'
+  }
 }
 
 module.exports = nextConfig
