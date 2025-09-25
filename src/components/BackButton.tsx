@@ -25,7 +25,7 @@ export default function BackButton({ fallbackUrl }: { fallbackUrl?: string }) {
       aria-label="Volver"
     >
       <Image
-        src="/resources/icons/btnback.svg"
+        src='/shop/resources/icons/btnback.svg'
         alt="Volver"
         width={40}
         height={40}

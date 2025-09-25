@@ -62,9 +62,9 @@ export default function ProductCard({
   return (
     <div
       onClick={onClick}
-      className="cursor-pointer transform transition-transform hover:scale-[1.02] rounded-xl bg-gradient-to-br from-gray-900 via-gray-800 to-black p-2 shadow-md hover:shadow-yellow-500/20 border border-yellow-700/30"
+      className="cursor-pointer transform transition-transform hover:scale-[1.02] rounded-xl bg-gradient-to-br from-gray-900 via-gray-800 to-black p-2 shadow-md hover:shadow-yellow-500/20 border border-yellow-700/30 h-full flex flex-col" // ← h-full flex flex-col aquí también
     >
-      <div className="relative w-full h-48 rounded-lg overflow-hidden border border-yellow-600/20">
+      <div className="relative w-full h-48 rounded-lg overflow-hidden border border-yellow-600/20 flex-shrink-0">
         <Image
           src={imageUrl}
           alt={name}
@@ -73,19 +73,19 @@ export default function ProductCard({
         />
       </div>
 
-      <div className="mt-3 px-3 py-2 bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-md border border-yellow-700/30 shadow-inner shadow-black/30">
-        <h3 className="font-semibold text-yellow-100 text-sm uppercase tracking-wide">
+      <div className="mt-3 px-3 py-2 bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-md border border-yellow-700/30 shadow-inner shadow-black/30 flex-1 flex flex-col">
+        <h3 className="font-semibold text-yellow-100 text-sm uppercase tracking-wide line-clamp-2 min-h-[3rem] flex items-center">
           {name}
         </h3>
         <p className="text-yellow-400 text-base font-semibold mt-1">
           ${price.toLocaleString()}
         </p>
 
-        <div className="flex gap-2 mt-3">
+        <div className="flex gap-2 mt-auto pt-3">
           {colors.map((color) => (
             <span
               key={color}
-              className="w-7 h-7 rounded-full border-2 border-white"
+              className="w-7 h-7 rounded-full border-2 border-white flex-shrink-0"
               style={{ backgroundColor: colorMap[color] || "#000" }}
               title={color}
             />

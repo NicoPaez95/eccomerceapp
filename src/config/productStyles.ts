@@ -7,7 +7,7 @@ export const productImageStyles: Record<string, Record<string, string>> = {
     Slim:" object-contain bg-neutral-300 transform hover:scale-170 hover:-translate-y-2  transition duration-300 ease-in-out"
   },
   pantalones: {
-    Chinos: "object-contain bg-neutral-300 hover:scale-200 -translate-y-12 transition duration-300 ease-in-out",
+    Chinos: "object-contain bg-neutral-300 hover:scale-200 transform hover:-translate-y-18  transition duration-300 ease-in-out",
     Jeans: "object-contain bg-neutral-300 scale-120  hover:scale-140  translate-y-2  transition duration-300 ease-in-out",
     Joggers: "object-contain bg-neutral-300 scale-120 hover:scale-140  translate-y-2  transition duration-300 ease-in-out"
   },
