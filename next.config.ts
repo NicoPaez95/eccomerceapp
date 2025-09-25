@@ -1,10 +1,16 @@
 // next.config.js
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    output: 'standalone',
+    basePath: '/shop',
+    async rewrites() {
+        return [
+            {
+                source: '/:path*',
+                destination: '/:path*',
+            },
+        ]
+    }
+}
 
-const nextConfig: NextConfig = {
-  basePath: '/shop',
-  output: 'standalone',
-  trailingSlash: true,
-};
-
-export default nextConfig;
+module.exports = nextConfig
