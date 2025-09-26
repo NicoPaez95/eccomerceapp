@@ -60,7 +60,7 @@ export default function SubcategoryPage() {
           aria-label="Ir al carrito"
         >
           <Image
-            src="/resources/icons/cart.svg"
+            src='/shop/resources/icons/cart.svg'
             alt="Carrito"
             width={48}
             height={48}

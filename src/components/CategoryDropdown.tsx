@@ -66,7 +66,7 @@ export default function CategoryDropdown({
             >
               <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
                 <Image
-                  src={subcategory.imageSrc}
+                  src={`/shop${subcategory.imageSrc}`} // prepend '/shop' por el basePath
                   alt={subcategory.name}
                   fill
                   className="object-cover rounded border border-yellow-800/40 shadow-sm"

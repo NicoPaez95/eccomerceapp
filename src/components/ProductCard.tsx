@@ -1,4 +1,5 @@
 'use client';
+//ProductCard.tsx
 import Image from 'next/image';
 import { ProductProps } from '@/types/components';
 import { productImageStyles } from '@/config/productStyles';
@@ -66,7 +67,7 @@ export default function ProductCard({
     >
       <div className="relative w-full h-48 rounded-lg overflow-hidden border border-yellow-600/20 flex-shrink-0">
         <Image
-          src={imageUrl}
+          src={`/shop${imageUrl}`}
           alt={name}
           fill
           className={`${imageClass}`}
