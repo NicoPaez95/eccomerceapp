@@ -1,8 +1,9 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
- 
-  basePath: '/shop'
+  basePath: '/shop',
+  assetPrefix: '/shop',
+  reactStrictMode: true,
 }
 
 module.exports = nextConfig
+
