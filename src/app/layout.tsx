@@ -1,14 +1,16 @@
-// src/app/layout.tsx
 import "../styles/globals.css";
 import { CarProvider } from "../context/CarContext";
 import { UserProvider } from "../context/UserContext";
 import { ReactNode } from "react";
+// src/app/layout.tsx
 //this is the root layout/este es el layout principal
-// src/app/layout.tsx
-// src/app/layout.tsx
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es" className="h-full">
+      <head>
+                {/* 👇 acá va tu favicon */}
+        <link rel="icon" href="/shop/favicon.ico" />
+      </head>
       <body className="min-h-screen h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
         <UserProvider>
           <CarProvider>
