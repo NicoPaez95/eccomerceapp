@@ -1,9 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  basePath: '/shop',
-  assetPrefix: '/shop',
-  reactStrictMode: false,
-}
+import type { NextConfig } from "next";
 
-module.exports = nextConfig
+const nextConfig: NextConfig = {
+  reactStrictMode: false,
+  basePath: "/shop",  
+  trailingSlash: false,
+};
+
+export default nextConfig;
 
