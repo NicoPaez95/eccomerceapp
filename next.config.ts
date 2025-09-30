@@ -2,7 +2,7 @@
 const nextConfig = {
   basePath: '/shop',
   assetPrefix: '/shop',
-  reactStrictMode: true,
+  reactStrictMode: false,
 }
 
 module.exports = nextConfig
