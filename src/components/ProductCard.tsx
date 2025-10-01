@@ -1,5 +1,5 @@
 'use client';
-//ProductCard.tsx
+// src/components/ProductCard.tsx
 import Image from 'next/image';
 import { ProductProps } from '@/types/components';
 import { productImageStyles } from '@/config/productStyles';

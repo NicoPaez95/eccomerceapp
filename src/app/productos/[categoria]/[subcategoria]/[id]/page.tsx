@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import { useRouter, useParams } from 'next/navigation';
 import Image from "next/image";
 import BackButton from "@/components/BackButton";
+import { getImagePath } from '@/utils/path';
 
 
 
@@ -79,6 +80,13 @@ export default function ProductDetailPage() {
     product.imagecolor1 ||
     "/productos/img/remeras/chombas/catchombas.png";
 
+
+  // ✅ DEBUG EN LUGAR CORRECTO - después de definir selectedImage
+  console.log("🔍 DEBUG IMAGEN:");
+  console.log("Imagen seleccionada:", selectedImage);
+  console.log("Imagen con getImagePath:", getImagePath(selectedImage));
+  console.log("Producto encontrado:", product);
+
   return (
     <div className="p-6 max-w-5xl mx-auto">
       {/* Botón de volver */}
@@ -86,12 +94,24 @@ export default function ProductDetailPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
         {/* Imagen */}
+
+
         <div className="relative w-full h-[600px] bg-gray-900 rounded-xl overflow-hidden flex items-center justify-center">
           <Image
-            src={selectedImage}
+            src={`/shop${selectedImage}`}//src={selectedImage}
             alt={product.name}
             fill
             className="object-contain"
+            onError={(e) => {
+              console.error("❌ Error cargando imagen:");
+              console.error("Evento error:", e);
+              console.error("Ruta fallida:", getImagePath(selectedImage));
+              console.error("Product ID:", product.id);
+              console.error("Color seleccionado:", selectedColor);
+            }}
+            onLoad={() => {
+              console.log("✅ Imagen cargada exitosamente:", getImagePath(selectedImage));
+            }}
           />
         </div>
 
@@ -117,11 +137,10 @@ export default function ProductDetailPage() {
                 <button
                   key={color}
                   onClick={() => setSelectedColor(color)}
-                  className={`w-7 h-7 rounded-full border-2 transition ${
-                    selectedColor === color
-                      ? "border-yellow-400 scale-110"
-                      : "border-white"
-                  }`}
+                  className={`w-7 h-7 rounded-full border-2 transition ${selectedColor === color
+                    ? "border-yellow-400 scale-110"
+                    : "border-white"
+                    }`}
                   style={{ backgroundColor: colorMap[color] || "#000" }}
                   title={color}
                 />
@@ -134,7 +153,7 @@ export default function ProductDetailPage() {
             onClick={() => {
               addToCart({
                 ...product,
-                image: selectedImage,
+                image: getImagePath(selectedImage),//image: selectedImage,
                 quantity: 1,
               });
               toast.success("Producto agregado al carrito");

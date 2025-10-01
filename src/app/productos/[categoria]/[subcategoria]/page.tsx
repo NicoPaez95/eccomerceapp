@@ -9,6 +9,7 @@ import ProductGrid from '@/components/ProductGrid';
 import { VisualProduct } from '@/types/VisualProduct';
 import BackButton from '@/components/BackButton';
 import Image from 'next/image';
+import { getImagePath } from '@/utils/path'; // ✅ AGREGAR ESTE IMPORT
 
 export default function SubcategoryPage() {
   const params = useParams();
@@ -19,7 +20,6 @@ export default function SubcategoryPage() {
   const [priceRange, setPriceRange] = useState({ min: '', max: '' });
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | ''>('');
 
-  // Depuración: verificar los parámetros de la URL
   console.log('Params from URL:', { categoria, subcategoria });
 
   useEffect(() => {
@@ -46,13 +46,12 @@ export default function SubcategoryPage() {
 
   return (
     <div className="p-6 max-w-6xl mx-auto">
-      {/* Botón volver: esquina superior izquierda */}
       <div className="fixed top-4 right-4 z-50"></div>
       <div className="fixed top-4 left-4 z-50">
         <BackButton fallbackUrl={`/productos/${categoria}`} />
       </div>
 
-      {/* Botón Carrito: esquina superior derecha */}
+      {/* BOTÓN CARRITO CORREGIDO */}
       <div className="fixed top-4 right-4 z-50">
         <button
           onClick={() => router.push('/carrito')}
@@ -60,16 +59,14 @@ export default function SubcategoryPage() {
           aria-label="Ir al carrito"
         >
           <Image
-            src='/shop/resources/icons/cart.svg'
+            src={getImagePath('/resources/icons/cart.svg')} // ✅ CORREGIDO
             alt="Carrito"
             width={48}
             height={48}
-            style={{ width: '48px', height: '48px' }}
           />
         </button>
       </div>
 
-      {/* Contenedor principal con margen superior para evitar solapamiento */}
       <div className="p-6 max-w-6xl mx-auto mt-24">
         <div className="flex justify-between items-center mb-6 px-2">
           <h2 className="text-xl font-bold capitalize text-white">
@@ -83,12 +80,11 @@ export default function SubcategoryPage() {
           setSortOrder={setSortOrder}
         />
 
-        {/* Pasar category y subcategory al ProductGrid */}
         <ProductGrid 
           products={products} 
           onProductClick={handleProductClick}
-          category={categoria ?? ''}  // ← Agregar esta prop
-          subcategory={subcategoria ?? ''}  // ← Agregar esta prop
+          category={categoria ?? ''}
+          subcategory={subcategoria ?? ''}
         />
       </div>
     </div>
