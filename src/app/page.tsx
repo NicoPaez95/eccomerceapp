@@ -1,5 +1,6 @@
 // src/app/page.tsx
 //Main page//Pagina principal
+
 import ParticlesBackground from "../components/ParticlesBackground";
 import CategoryItems from "../components/CategoryItems";
 
