@@ -26,7 +26,7 @@ export default function CarritoPage() {
               >
                 {item.image&& (
                   <Image
-                    src={`/shop${item.image}`} // Asegúrate que item.image sea '/productos/...'
+                    src={item.image} // Asegúrate que item.image sea '/productos/...'
                     alt={item.name}
                     width={80}
                     height={80}
