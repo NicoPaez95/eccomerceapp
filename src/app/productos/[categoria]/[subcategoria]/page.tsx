@@ -80,8 +80,8 @@ export default function SubcategoryPage() {
           setSortOrder={setSortOrder}
         />
 
-        <ProductGrid 
-          products={products} 
+        <ProductGrid
+          products={products}
           onProductClick={handleProductClick}
           category={categoria ?? ''}
           subcategory={subcategoria ?? ''}
