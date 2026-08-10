@@ -4,13 +4,13 @@ Welcome to my online store for men's fashion. This web application allows users 
 
 ## ✨ Key Features
 
-- Navigation by category and subcategory  
-- Individual product detail view  
-- Functional shopping cart  
-- Checkout integrated with Stripe (mocked)  
-- Post-purchase thank you page  
-- Modern and responsive design  
-- AOS animations and interactive backgrounds with tsParticles  
+- Navigation by category and subcategory
+- Individual product detail view
+- Functional shopping cart
+- Checkout integrated with Stripe (mocked)
+- Post-purchase thank you page
+- Modern and responsive design
+- AOS animations and interactive backgrounds with tsParticles
 - Clean layered architecture (adapters, domain, app, etc.)
 
 ---
@@ -19,51 +19,51 @@ Welcome to my online store for men's fashion. This web application allows users 
 
 📂 public/  
 ├── 📁 productos/  
-│   └── 📁 img/  
-│       ├── 📁 pantalones/  
-│       │   ├── chinos/  
-│       │   ├── jeans/  
-│       │   └── joggers/  
-│       ├── 📁 remeras/  
-│       │   ├── chombas/  
-│       │   ├── oversize/  
-│       │   └── slimfit/  
-│       └── 📁 zapatillas/  
+│ └── 📁 img/  
+│ ├── 📁 pantalones/  
+│ │ ├── chinos/  
+│ │ ├── jeans/  
+│ │ └── joggers/  
+│ ├── 📁 remeras/  
+│ │ ├── chombas/  
+│ │ ├── oversize/  
+│ │ └── slimfit/  
+│ └── 📁 zapatillas/  
 ├── 📁 resources/  
-│   └── 📁 icons/               # SVG icons  
+│ └── 📁 icons/ # SVG icons
 
 📂 src/  
 ├── 📁 adapters/  
-│   ├── api/                   # HTTP communication  
-│   ├── db/                    # Database simulation  
-│   ├── mocks/                 # Mock data  
-│   └── payment/               # Stripe integration (placeholder)  
+│ ├── api/ # HTTP communication  
+│ ├── db/ # Database simulation  
+│ ├── mocks/ # Mock data  
+│ └── payment/ # Stripe integration (placeholder)  
 ├── 📁 app/  
-│   ├── carrito/               # Cart view  
-│   ├── checkout/              # Payment flow  
-│   │   └── exito/             # Success page after purchase  
-│   ├── gracias/               # Thank you page  
-│   ├── productos/             # Dynamic route for products  
-│   │   └── [category]/[subcategory]/[id]/page.tsx  
-│   ├── testboton/  
-│   ├── layout.tsx  
-│   ├── providers.tsx  
-│   ├── page.tsx  
-│   ├── error.tsx  
-│   └── not-found.tsx  
-├── 📁 components/             # Reusable components  
-│   └── data/                  # Static category data  
-├── 📁 config/                 # API config  
-├── 📁 context/                # Global contexts  
-├── 📁 domain/                 # Business logic  
-│   ├── entities/  
-│   ├── errors/  
-│   ├── repositories/  
-│   └── services/  
-├── 📁 hooks/                  # Custom hooks  
-├── 📁 lib/                    # Utilities  
-├── 📁 styles/                 # Global styles  
-├── 📁 types/                  # TypeScript typings  
+│ ├── carrito/ # Cart view  
+│ ├── checkout/ # Payment flow  
+│ │ └── exito/ # Success page after purchase  
+│ ├── gracias/ # Thank you page  
+│ ├── productos/ # Dynamic route for products  
+│ │ └── [category]/[subcategory]/[id]/page.tsx  
+│ ├── testboton/  
+│ ├── layout.tsx  
+│ ├── providers.tsx  
+│ ├── page.tsx  
+│ ├── error.tsx  
+│ └── not-found.tsx  
+├── 📁 components/ # Reusable components  
+│ └── data/ # Static category data  
+├── 📁 config/ # API config  
+├── 📁 context/ # Global contexts  
+├── 📁 domain/ # Business logic  
+│ ├── entities/  
+│ ├── errors/  
+│ ├── repositories/  
+│ └── services/  
+├── 📁 hooks/ # Custom hooks  
+├── 📁 lib/ # Utilities  
+├── 📁 styles/ # Global styles  
+├── 📁 types/ # TypeScript typings  
 ├── .env.local  
 ├── .gitignore  
 ├── eslint.config.mjs  
@@ -71,36 +71,36 @@ Welcome to my online store for men's fashion. This web application allows users 
 ├── package.json  
 ├── tsconfig.json  
 ├── postcss.config.mjs  
-└── package-lock.json  
+└── package-lock.json
 
 ---
 
 ## 🧩 Technologies Used
 
-- **Next.js**  
-- **TypeScript**  
-- **TailwindCSS**  
-- **AOS (Animate on Scroll)**  
-- **tsParticles**  
-- **Stripe (mocked payment flow)**  
-- **Axios**  
-- **React Context API**  
+- **Next.js**
+- **TypeScript**
+- **TailwindCSS**
+- **AOS (Animate on Scroll)**
+- **tsParticles**
+- **Stripe (mocked payment flow)**
+- **Axios**
+- **React Context API**
 - **Layered architecture** (Domain, Adapters, etc.)
 
 ---
 
 ## 🚀 Scripts
 
-npm run dev       # Start app in development mode  
-npm run build     # Build for production  
-npm run start     # Run production server  
-npm run lint      # Run linting
-
+npm run dev # Start app in development mode  
+npm run build # Build for production  
+npm run start # Run production server  
+npm run lint # Run linting
 
 ## 📘 Available in Spanish
-This project is also available in Spanish. You can read it in README.es.md
 
-## ⚠️ Note: 
+This project is also available in Spanish. You can read it in [README.es.md](README.es.md)
+
+## ⚠️ Note:
 
 Although the file stripe.ts is present in the repository, the payment system is currently mocked for demonstration purposes. Real integration with Stripe is planned but not implemented in this version.
 
