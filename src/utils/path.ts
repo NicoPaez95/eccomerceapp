@@ -2,7 +2,7 @@
 
 /**
  * Retorna la ruta formateada para recursos estáticos agregando el prefijo base.
- * @param path Ruta del recurso (ej: "productos/img/remera.png")
+ * @param path Ruta del recurso (ej: "productos/img/remera.webp")
  * @returns Ruta normalizada con prefijo /shop
  */
 export const getImagePath = (path: string): string => {

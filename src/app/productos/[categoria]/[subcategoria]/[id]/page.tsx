@@ -78,7 +78,7 @@ export default function ProductDetailPage() {
       | string
       | undefined) ||
     product.imagecolor1 ||
-    "/productos/img/remeras/chombas/catchombas.png";
+    "/productos/img/remeras/chombas/catchombas.webp";
 
 
   // ✅ DEBUG EN LUGAR CORRECTO - después de definir selectedImage

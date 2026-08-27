@@ -41,17 +41,16 @@ export default function ProductCard({
 
   // Validar y normalizar categoría y subcategoría
   const normalizedCategory = category ? category.toLowerCase() : 'default';
-  
+
   let normalizedSubcategory = 'default';
   if (subcategory) {
-    // Convertir la primera letra a mayúscula y el resto a minúscula
-    normalizedSubcategory = subcategory.charAt(0).toUpperCase() + 
-                           subcategory.slice(1).toLowerCase();
+    normalizedSubcategory = subcategory.charAt(0).toUpperCase() +
+      subcategory.slice(1).toLowerCase();
   }
 
   // Obtener el estilo de imagen con validaciones
   let imageClass = productImageStyles.default.default;
-  
+
   if (productImageStyles[normalizedCategory]) {
     if (productImageStyles[normalizedCategory][normalizedSubcategory]) {
       imageClass = productImageStyles[normalizedCategory][normalizedSubcategory];
@@ -63,13 +62,15 @@ export default function ProductCard({
   return (
     <div
       onClick={onClick}
-      className="cursor-pointer transform transition-transform hover:scale-[1.02] rounded-xl bg-gradient-to-br from-gray-900 via-gray-800 to-black p-2 shadow-md hover:shadow-yellow-500/20 border border-yellow-700/30 h-full flex flex-col" // ← h-full flex flex-col aquí también
+      className="cursor-pointer transform transition-transform hover:scale-[1.02] rounded-xl bg-gradient-to-br from-gray-900 via-gray-800 to-black p-2 shadow-md hover:shadow-yellow-500/20 border border-yellow-700/30 h-full flex flex-col"
     >
+      {/* Contenedor optimizado de imagen */}
       <div className="relative w-full h-48 rounded-lg overflow-hidden border border-yellow-600/20 flex-shrink-0">
         <Image
           src={`/shop${imageUrl}`}
           alt={name}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className={`${imageClass}`}
         />
       </div>
